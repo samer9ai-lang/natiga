@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>نتيجة الثانوية العامة | Samer Hassan</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg-deep:#07070C;--surface:rgba(35,20,58,0.6);--accent-purple:#7B2DFF;--accent-violet:#A855F7;--accent-pink:#ec4899;--cta-orange-start:#FF6A00;--cta-orange-end:#FF8C1A;--text-white:#FFFFFF;--text-muted:rgba(255,255,255,0.55);--glass-border:rgba(123,45,255,0.2)}
+body{font-family:'Tajawal',sans-serif;background:var(--bg-deep);color:var(--text-white);min-height:100dvh;overflow-x:hidden;position:relative}
+.bg-glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.bg-glow-1{width:600px;height:600px;background:radial-gradient(circle,rgba(123,45,255,0.18) 0%,transparent 70%);top:-10%;left:50%;transform:translateX(-50%)}
+.bg-glow-2{width:400px;height:400px;background:radial-gradient(circle,rgba(236,72,153,0.1) 0%,transparent 70%);bottom:-5%;right:-10%}
+.particle{position:fixed;width:4px;height:4px;background:var(--accent-purple);border-radius:50%;opacity:0.25;pointer-events:none;animation:floatParticle 12s infinite ease-in-out;z-index:0}
+@keyframes floatParticle{0%,100%{transform:translateY(0) translateX(0);opacity:0.25}50%{transform:translateY(-30px) translateX(15px);opacity:0.5}}
+.container{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:24px 16px;min-height:100dvh;display:flex;flex-direction:column}
+header{text-align:center;margin-bottom:28px;padding-top:16px;animation:fadeInDown 0.8s ease}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+header h1{font-size:clamp(1.8rem,6vw,2.6rem);font-weight:900;margin-bottom:6px;background:linear-gradient(135deg,#fff 0%,#d8b4fe 50%,#f9a8d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
+header p{color:var(--text-muted);font-size:0.95rem}
+.search-box{position:relative;margin-bottom:24px;animation:fadeInUp 0.6s ease 0.2s both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.search-box input{width:100%;padding:18px 56px 18px 20px;border:none;border-radius:18px;background:var(--surface);backdrop-filter:blur(20px);color:#fff;font-family:'Tajawal',sans-serif;font-size:1.05rem;outline:none;transition:all 0.3s;border:1px solid var(--glass-border)}
+.search-box input:focus{background:rgba(35,20,58,0.8);box-shadow:0 0 0 3px rgba(123,45,255,0.15),0 8px 32px rgba(0,0,0,0.3);border-color:rgba(123,45,255,0.4)}
+.search-box input::placeholder{color:#888}
+.search-box .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--accent-violet);font-size:1.2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px;animation:fadeInUp 0.6s ease 0.3s both}
+.stat-card{background:var(--surface);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:18px;padding:20px 12px;text-align:center;transition:all 0.3s}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(123,45,255,0.15);border-color:rgba(123,45,255,0.35)}
+.stat-card .number{font-size:1.7rem;font-weight:800;color:var(--cta-orange-end);text-shadow:0 0 15px rgba(255,140,26,0.2)}
+.stat-card .label{font-size:0.8rem;color:var(--text-muted);margin-top:4px}
+.table-container{background:var(--surface);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.6s ease 0.4s both}
+.table-wrap{max-height:55vh;overflow:auto}
+.table-wrap::-webkit-scrollbar{width:6px}
+.table-wrap::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px}
+.table-wrap::-webkit-scrollbar-thumb{background:rgba(123,45,255,0.3);border-radius:3px}
+table{width:100%;border-collapse:collapse}
+thead{background:rgba(233,69,96,0.1);position:sticky;top:0;z-index:5}
+th{padding:14px 16px;text-align:right;font-weight:800;font-size:0.85rem;color:#ff6b6b;border-bottom:2px solid rgba(233,69,96,0.25);white-space:nowrap;background:rgba(233,69,96,0.1);backdrop-filter:blur(10px)}
+td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem;color:rgba(255,255,255,0.9)}
+tbody tr{transition:all 0.2s}
+tbody tr:hover{background:rgba(123,45,255,0.08)}
+tbody tr.hidden{display:none}
+.no-results{text-align:center;padding:50px 20px;color:var(--text-muted);display:none}
+.no-results.show{display:block}
+.no-results i{font-size:2.5rem;margin-bottom:12px;display:block;color:var(--accent-purple)}
+.loading{text-align:center;padding:60px 20px;color:var(--text-muted)}
+.loading i{font-size:2rem;margin-bottom:12px;display:block;color:var(--accent-purple);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.footer{margin-top:auto;padding-top:50px;text-align:center;animation:fadeInUp 0.6s ease 0.7s both}
+.footer-brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-brand .avatar{width:44px;height:44px;background:linear-gradient(135deg,var(--accent-purple),var(--accent-pink));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:#fff;box-shadow:0 0 15px rgba(123,45,255,0.3)}
+.footer-brand .info{text-align:right}
+.footer-brand .name{font-weight:800;font-size:1.1rem;color:#fff}
+.footer-brand .role{font-size:0.8rem;color:var(--text-muted)}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.footer-links a{color:var(--text-muted);font-size:1.3rem;transition:all 0.3s;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);text-decoration:none}
+.footer-links a:hover{color:var(--accent-violet);background:rgba(123,45,255,0.12);border-color:rgba(123,45,255,0.25);transform:translateY(-3px);box-shadow:0 4px 15px rgba(123,45,255,0.2)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.25);margin-top:16px}
+@media(max-width:600px){th,td{padding:10px 12px;font-size:0.78rem}header h1{font-size:1.5rem}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+<div class="particle" style="top:20%;left:8%;animation-delay:0s"></div>
+<div class="particle" style="top:60%;left:90%;animation-delay:3s"></div>
+<div class="particle" style="top:85%;left:20%;animation-delay:6s"></div>
+
+<div class="container">
+<header>
+<h1>نتيجة الثانوية العامة</h1>
+<p>ابحث عن أي طالب بالاسم أو رقم الجلوس</p>
+</header>
+
+<div class="stats" id="stats">
+<div class="stat-card"><div class="number" id="totalCount">-</div><div class="label">إجمالي الطلاب</div></div>
+<div class="stat-card"><div class="number" id="passCount">-</div><div class="label">الناجحين</div></div>
+<div class="stat-card"><div class="number" id="failCount">-</div><div class="label">الراسبين</div></div>
+<div class="stat-card"><div class="number" id="topScore">-</div><div class="label">أعلى مجموع</div></div>
+</div>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="ابحث بالاسم أو رقم الجلوس..." autocomplete="off">
+<span class="search-icon"><i class="fas fa-search"></i></span>
+</div>
+
+<div class="table-container" id="tableContainer">
+<div class="loading" id="loading">
+<i class="fas fa-circle-notch"></i>
+<div>جاري تحميل البيانات...</div>
+</div>
+<div class="table-wrap" id="tableWrap" style="display:none">
+<table>
+<thead id="tableHead"></thead>
+<tbody id="tableBody"></tbody>
+</table>
+<div class="no-results" id="noResults"><i class="fas fa-search"></i>لا توجد نتائج مطابقة للبحث</div>
+</div>
+</div>
+
+<div class="footer">
+<div class="footer-brand">
+<div class="avatar">S</div>
+<div class="info">
+<div class="name">Samer Hassan</div>
+<div class="role">Web Developer & UI Designer</div>
+</div>
+</div>
+<div class="footer-links">
+<a href="https://www.instagram.com/samer9ai" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+<div class="footer-copy">© 2026 جميع الحقوق محفوظة | تم التطوير بواسطة Samer Hassan</div>
+</div>
+</div>
+
+<script>
+let allData = [];
+let headers = [];
+
+const tableHead = document.getElementById('tableHead');
+const tableBody = document.getElementById('tableBody');
+const searchInput = document.getElementById('searchInput');
+const noResults = document.getElementById('noResults');
+const loading = document.getElementById('loading');
+const tableWrap = document.getElementById('tableWrap');
+
+async function loadData() {
+  try {
+    const res = await fetch('./data.json');
+    const data = await res.json();
+    headers = data.headers;
+    allData = data.rows;
+    loading.style.display = 'none';
+    tableWrap.style.display = 'block';
+    renderTable();
+    updateStats();
+  } catch(e) {
+    loading.innerHTML = '<div style="color:#ef4444">❌ حدث خطأ في تحميل البيانات</div>';
+  }
+}
+
+function renderTable() {
+  tableHead.innerHTML = '<tr>' + headers.map(h => '<th>' + (h || '') + '</th>').join('') + '</tr>';
+  renderRows(allData);
+}
+function renderRows(rows) {
+  if (rows.length === 0) {
+    tableBody.innerHTML = '';
+    noResults.classList.add('show');
+    return;
+  }
+  noResults.classList.remove('show');
+  tableBody.innerHTML = rows.map(row => '<tr>' + headers.map((_, i) => '<td>' + (row[i] !== undefined ? row[i] : '') + '</td>').join('') + '</tr>').join('');
+}
+function updateStats() {
+  document.getElementById('totalCount').textContent = allData.length;
+  const totalCol = headers.findIndex(h => /المجموع|الدرجة|Total|Score|مجموع/i.test(h));
+  const statusCol = headers.findIndex(h => /الحالة|النتيجة|Result|Status|ناجح|راسب/i.test(h));
+  let pass = 0, fail = 0, max = 0;
+  allData.forEach(row => {
+    if (statusCol >= 0) {
+      const val = String(row[statusCol] || '').toLowerCase();
+      if (val.includes('ناجح') || val.includes('pass') || val.includes('success') || val.includes('ناجحة')) pass++;
+      else if (val.includes('راسب') || val.includes('fail') || val.includes('راسبة')) fail++;
+    }
+    if (totalCol >= 0) {
+      const val = parseFloat(row[totalCol]);
+      if (!isNaN(val) && val > max) max = val;
+    }
+  });
+  document.getElementById('passCount').textContent = pass;
+  document.getElementById('failCount').textContent = fail;
+  document.getElementById('topScore').textContent = max || 0;
+}
+searchInput.addEventListener('input', function() {
+  const query = this.value.trim().toLowerCase();
+  if (!query) { renderRows(allData); return; }
+  const filtered = allData.filter(row => row.some(cell => String(cell || '').toLowerCase().includes(query)));
+  renderRows(filtered);
+});
+loadData();
+</script>
+</body>
+</html>
